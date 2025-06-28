@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Consultant Pro - Professional HR Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-users"></i>
+                <span>HR Consultant Pro</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero hero-image-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">
+                    Unlock Your Team's Potential with Expert HR Guidance
+                </h1>
+                <p class="hero-subtitle animate-fade-in-delay">
+                    Personalized HR consulting to help you build a thriving, people-first organization.
+                </p>
+                <div class="hero-buttons animate-fade-in-delay-2">
+                    <button class="btn btn-primary" onclick="scrollToSection('services')">
+                        Explore Services
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">
+                        Contact Me
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about about-bg">
+        <div class="about-bg-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about empowering people and organizations</p>
+            </div>
+            <div class="about-content about-me-layout">
+                <div class="about-image about-photo">
+                    <div class="profile-3d-container">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="HR Consultant Photo" class="profile-photo profile-3d">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 class="about-title-3d">Hello! I'm Alex Carter</h3>
+                    <p>I'm an experienced HR consultant with over 15 years helping businesses build strong teams and create positive workplace cultures. I specialize in talent acquisition, leadership development, and strategic HR solutions.</p>
+                    <div class="about-highlights">
+                        <li><i class="fas fa-check-circle"></i> 15+ Years Experience</li>
+                        <li><i class="fas fa-check-circle"></i> 500+ Happy Clients</li>
+                        <li><i class="fas fa-check-circle"></i> Certified HR Professional</li>
+                    </div>
+                    <div class="about-cta">
+                        <button class="btn btn-primary" onclick="scrollToSection('contact')">Let's Connect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrolling Images Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Visual journey of HR transformations</p>
+            </div>
+            <div class="image-scroll-container">
+                <div class="image-scroll">
+                    <div class="scroll-item">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop" alt="Team Building">
+                        <div class="image-overlay">
+                            <h4>Team Building Workshop</h4>
+                            <p>Building stronger teams through collaboration</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Leadership Training">
+                        <div class="image-overlay">
+                            <h4>Leadership Development</h4>
+                            <p>Empowering future leaders</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop" alt="HR Meeting">
+                        <div class="image-overlay">
+                            <h4>Strategic HR Planning</h4>
+                            <p>Aligning HR with business goals</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop" alt="Employee Training">
+                        <div class="image-overlay">
+                            <h4>Employee Training</h4>
+                            <p>Skills development programs</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop" alt="Workplace Culture">
+                        <div class="image-overlay">
+                            <h4>Workplace Culture</h4>
+                            <p>Creating positive environments</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Performance Review">
+                        <div class="image-overlay">
+                            <h4>Performance Management</h4>
+                            <p>Driving excellence and growth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work Examples</h2>
+                <p class="section-subtitle">Real projects and transformations</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Tech Startup">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h4>Tech Startup HR Setup</h4>
+                                <p>Complete HR infrastructure for 50+ employee startup</p>
+                                <span class="portfolio-tag">Recruitment</span>
+                                <span class="portfolio-tag">Policy Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop" alt="Manufacturing Company">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h4>Manufacturing Company Culture</h4>
+                                <p>Transformed workplace culture for 200+ employees</p>
+                                <span class="portfolio-tag">Culture Change</span>
+                                <span class="portfolio-tag">Employee Engagement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop" alt="Healthcare Organization">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h4>Healthcare HR Compliance</h4>
+                                <p>Compliance audit and policy updates for healthcare org</p>
+                                <span class="portfolio-tag">Compliance</span>
+                                <span class="portfolio-tag">Policy Updates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Insights</h2>
+                <p class="section-subtitle">HR trends and best practices</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop" alt="Remote Work">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 15, 2024</span>
+                            <span class="blog-category">Remote Work</span>
+                        </div>
+                        <h3>Building Effective Remote Teams</h3>
+                        <p>Discover the key strategies for managing and motivating remote teams in the post-pandemic workplace.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop" alt="Employee Retention">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 10, 2024</span>
+                            <span class="blog-category">Retention</span>
+                        </div>
+                        <h3>Employee Retention Strategies</h3>
+                        <p>Learn proven techniques to keep your top talent engaged and committed to your organization.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop" alt="HR Technology">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 5, 2024</span>
+                            <span class="blog-category">Technology</span>
+                        </div>
+                        <h3>HR Technology Trends 2024</h3>
+                        <p>Explore the latest HR technologies that are transforming how we manage human resources.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Updated with HR Insights</h2>
+                    <p>Get the latest HR trends, tips, and best practices delivered to your inbox monthly.</p>
+                </div>
+                <div class="newsletter-form">
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Clients Say</h2>
+                <p class="section-subtitle">Real feedback from satisfied clients</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Alex helped us transform our hiring process and improved our retention rate by 40%."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Sarah Johnson</h4>
+                        <span>HR Director, TechStart</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Professional, knowledgeable, and always available when we need guidance."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Mike Chen</h4>
+                        <span>CEO, InnovateCorp</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The best HR consultant we've worked with. Results speak for themselves."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Lisa Rodriguez</h4>
+                        <span>Operations Manager, GrowthCo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Me</h2>
+                <p class="section-subtitle">What makes me different</p>
+            </div>
+            <div class="why-choose-grid">
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Response</h3>
+                    <p>Get answers within 24 hours, guaranteed.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Track record of improving HR metrics across industries.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Personal Approach</h3>
+                    <p>One-on-one attention, not cookie-cutter solutions.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Expert Knowledge</h3>
+                    <p>Certified professional with 15+ years experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Common questions about my services</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does it take to see results?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients see improvements within 30-60 days, depending on the scope of work.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with small businesses?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! I work with companies of all sizes, from startups to large corporations.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What industries do you specialize in?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I have experience across tech, healthcare, finance, retail, and manufacturing sectors.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do we get started?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply fill out the contact form or call me for a free 30-minute consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive HR solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Recruitment & Staffing</h3>
+                    <p>Find the perfect candidates for your organization with our comprehensive recruitment services.</p>
+                    <ul>
+                        <li>Job posting and advertising</li>
+                        <li>Candidate screening and interviews</li>
+                        <li>Background checks and references</li>
+                        <li>Onboarding support</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training & Development</h3>
+                    <p>Invest in your team's growth with customized training programs and development initiatives.</p>
+                    <ul>
+                        <li>Leadership development</li>
+                        <li>Skills training workshops</li>
+                        <li>Performance management</li>
+                        <li>Career planning</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>HR Compliance</h3>
+                    <p>Stay compliant with labor laws and regulations to protect your business and employees.</p>
+                    <ul>
+                        <li>Policy development</li>
+                        <li>Legal compliance audits</li>
+                        <li>Employee handbook creation</li>
+                        <li>Risk management</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Performance Management</h3>
+                    <p>Implement effective performance evaluation systems to drive productivity and engagement.</p>
+                    <ul>
+                        <li>Performance appraisal systems</li>
+                        <li>Goal setting and tracking</li>
+                        <li>Feedback mechanisms</li>
+                        <li>Recognition programs</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Employee Wellness</h3>
+                    <p>Promote a healthy work environment with comprehensive wellness and benefits programs.</p>
+                    <ul>
+                        <li>Health and wellness programs</li>
+                        <li>Benefits administration</li>
+                        <li>Work-life balance initiatives</li>
+                        <li>Mental health support</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>HR Technology</h3>
+                    <p>Leverage modern HR technology to streamline processes and improve efficiency.</p>
+                    <ul>
+                        <li>HRIS implementation</li>
+                        <li>Automation solutions</li>
+                        <li>Data analytics</li>
+                        <li>Digital transformation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to transform your HR practices? Let's talk!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>123 Business Street<br>Suite 456<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                            <div class="contact-actions">
+                                <a href="tel:+15551234567" class="contact-action-btn">
+                                    <i class="fas fa-phone"></i> Call Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p>+1 (555) 123-4567</p>
+                            <div class="contact-actions">
+                                <a href="https://wa.me/15551234567" target="_blank" class="contact-action-btn whatsapp-btn">
+                                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@hrconsultantpro.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="company" name="company" placeholder="Company Name">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="recruitment">Recruitment & Staffing</option>
+                                <option value="training">Training & Development</option>
+                                <option value="compliance">HR Compliance</option>
+                                <option value="performance">Performance Management</option>
+                                <option value="wellness">Employee Wellness</option>
+                                <option value="technology">HR Technology</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tell us about your HR needs..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-users"></i>
+                        <span>HR Consultant Pro</span>
+                    </div>
+                    <p>Transforming businesses through strategic human resources management.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Recruitment</a></li>
+                        <li><a href="#services">Training</a></li>
+                        <li><a href="#services">Compliance</a></li>
+                        <li><a href="#services">Technology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@hrconsultantpro.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New York, NY 10001</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HR Consultant Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Alert Container -->
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
