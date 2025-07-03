@@ -3,10 +3,1287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Consultant Pro - Professional HR Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>AAMCS | HR Consultant Pro - Professional HR Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --text-color: #374151;
+            --text-light: #6b7280;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(37, 99, 235, 0.05);
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(37, 99, 235, 0.1);
+    border-radius: 50%;
+}
+
+.highlight-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--dark-color);
+}
+
+.highlight-item p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            
+        }
+        .section-header h3{
+            color: #111827;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .nav-logo i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-item {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-image-bg {
+            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            color: white;
+            padding: 0 1.5rem;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        /* About Section */
+        .about {
+            position: relative;
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .about-bg {
+            background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+        
+        .about-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .profile-3d-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(10deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-3d-container:hover {
+            transform: perspective(1000px) rotateY(0) rotateX(0);
+        }
+        
+        .profile-photo {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+            color: #000;
+
+        }
+        
+        .about-title-3d {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-title-3d:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .about-highlights {
+            margin: 1.5rem 0;
+        }
+        
+        .about-highlights li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .about-highlights i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .image-scroll-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .image-scroll {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .scroll-item {
+            min-width: 300px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scroll-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .scroll-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .scroll-item:hover .image-overlay {
+            transform: translateY(0);
+        }
+        
+        .image-overlay h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .image-overlay p {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 6 - 1.5rem * 5));
+            }
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .portfolio-item {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(37, 99, 235, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .portfolio-content h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-content p {
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .portfolio-tag {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 6rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .blog-category {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .blog-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .blog-card p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .blog-link {
+            font-weight: 500;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .blog-link i {
+            margin-left: 0.25rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-link:hover i {
+            transform: translateX(3px);
+        }
+        
+        /* Newsletter Section */
+        .newsletter {
+            padding: 4rem 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .newsletter-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-text p {
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            flex: 0 0 50%;
+        }
+        
+        .form-group {
+            display: flex;
+        }
+        
+        .form-group input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 0.375rem 0 0 0.375rem;
+            font-size: 1rem;
+        }
+        
+        .form-group button {
+            border-radius: 0 0.375rem 0.375rem 0;
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .form-group button:hover {
+            background-color: #111827;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-color);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-content {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-content:before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-content p {
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .testimonial-author span {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        /* Why Choose Section */
+        .why-choose {
+            padding: 6rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .why-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .why-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .why-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .why-item p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            background-color: var(--light-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .faq-question h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 0;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .service-card ul {
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-card li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+        
+        .contact-details h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-actions {
+            margin-top: 1rem;
+        }
+        
+        .contact-action-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+        }
+        
+        .contact-action-btn i {
+            margin-right: 0.5rem;
+        }
+        
+        .contact-action-btn:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .footer-section h4 {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .footer-section h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            padding: 1.5rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        /* Alert Container */
+        .alert-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.3s ease, fadeOut 0.5s ease 3s forwards;
+        }
+        
+        .alert-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .alert-error {
+            background-color: var(--error-color);
+            color: white;
+        }
+        
+        .alert i {
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        
+        /* Animations */
+        .animate-fade-in {
+            animation: fadeIn 1s ease;
+        }
+        
+        .animate-fade-in-delay {
+            animation: fadeIn 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+        
+        .animate-fade-in-delay-2 {
+            animation: fadeIn 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 1rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .newsletter-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .newsletter-form {
+                width: 100%;
+                margin-top: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .portfolio-grid,
+            .blog-grid,
+            .testimonials-grid,
+            .why-choose-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -14,7 +1291,7 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-users"></i>
-                <span>HR Consultant </span>
+                <span>AAMCS HR Consultant</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -30,7 +1307,6 @@
                     <a href="#portfolio" class="nav-link">Portfolio</a>
                 </li>
                 <li class="nav-item">
-
                     <a href="#testimonials" class="nav-link">Testimonials</a>
                 </li>
                 <li class="nav-item">
@@ -60,17 +1336,17 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title animate-fade-in">
-                    Unlock Your Team's Potential with Expert HR Guidance
+                    Transform Your Workplace with Expert HR Solutions
                 </h1>
                 <p class="hero-subtitle animate-fade-in-delay">
-                    Personalized HR consulting to help you build a thriving, people-first organization.
+                    AAMCS provides comprehensive HR consulting services to help businesses build high-performing teams and positive work cultures.
                 </p>
                 <div class="hero-buttons animate-fade-in-delay-2">
                     <button class="btn btn-primary" onclick="scrollToSection('services')">
-                        Explore Services
+                        Our Services
                     </button>
                     <button class="btn btn-secondary" onclick="scrollToSection('contact')">
-                        Contact Me
+                        Free Consultation
                     </button>
                 </div>
             </div>
@@ -78,41 +1354,76 @@
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="about about-bg">
-        <div class="about-bg-overlay"></div>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Passionate about empowering people and organizations</p>
+    <!-- About Me Section -->
+<section id="about" class="about about-bg">
+    <div class="about-bg-overlay"></div>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">About AAMCS</h2>
+            <p class="section-subtitle">Your trusted partner in human capital management</p>
+        </div>
+        <div class="about-content about-me-layout">
+            <div class="about-image about-photo">
+                <div class="profile-3d-container">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="AAMCS Team Photo" class="profile-photo profile-3d">
+                </div>
             </div>
-            <div class="about-content about-me-layout">
-                <div class="about-image about-photo">
-                    <div class="profile-3d-container">
-                        <img src="/pro.jpeg" alt="HR Consultant Photo" class="profile-photo profile-3d">
+            <div class="about-text">
+                <h3 class="about-title-3d">Strategic HR Solutions for Modern Businesses</h3>
+                <p>AAMCS is a premier HR consulting firm headquartered in Hyderabad, providing comprehensive human resource solutions to organizations across India. We specialize in transforming HR functions to drive business growth, employee engagement, and operational excellence.</p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-grid">
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>15+ Years</h4>
+                                <p>Combined HR Experience</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>500+</h4>
+                                <p>Satisfied Clients</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Certified</h4>
+                                <p>HR Professionals</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <h4>Custom</h4>
+                                <p>Tailored Solutions</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="about-text">
-                    <h3 class="about-title-3d">Hello! I'm Alex Carter</h3>
-                    <p>I'm an experienced HR consultant with over 15 years helping businesses build strong teams and create positive workplace cultures. I specialize in talent acquisition, leadership development, and strategic HR solutions.</p>
-                    <div class="about-highlights">
-                        <li><i class="fas fa-check-circle"></i> 15+ Years Experience</li>
-                        <li><i class="fas fa-check-circle"></i> 500+ Happy Clients</li>
-                        <li><i class="fas fa-check-circle"></i> Certified HR Professional</li>
-                    </div>
-                    <div class="about-cta">
-                        <button class="btn btn-primary" onclick="scrollToSection('contact')">Let's Connect</button>
-                    </div>
+                
+                <p>Our team of certified HR experts brings diverse industry experience across IT, manufacturing, healthcare, and service sectors. We understand the unique challenges of the Indian business landscape and provide localized solutions that comply with all statutory requirements.</p>
+                
+                <div class="about-cta">
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">Schedule Consultation</button>
+                    <button class="btn btn-secondary" onclick="window.open('tel:+919177457715')">
+                        <i class="fas fa-phone"></i> Call Now
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Scrolling Images Section -->
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Success Stories</h2>
-                <p class="section-subtitle">Visual journey of HR transformations</p>
+                <h2 class="section-title">Our Work in Action</h2>
+                <p class="section-subtitle">See how we've helped organizations transform their HR practices</p>
             </div>
             <div class="image-scroll-container">
                 <div class="image-scroll">
@@ -152,10 +1463,24 @@
                         </div>
                     </div>
                     <div class="scroll-item">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Performance Review">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=300&fit=crop" alt="Performance Review">
                         <div class="image-overlay">
                             <h4>Performance Management</h4>
                             <p>Driving excellence and growth</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop" alt="HR Technology">
+                        <div class="image-overlay">
+                            <h4>HR Technology</h4>
+                            <p>Implementing modern HR systems</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?w=400&h=300&fit=crop" alt="Diversity Training">
+                        <div class="image-overlay">
+                            <h4>Diversity & Inclusion</h4>
+                            <p>Building inclusive workplaces</p>
                         </div>
                     </div>
                 </div>
@@ -167,8 +1492,8 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Work Examples</h2>
-                <p class="section-subtitle">Real projects and transformations</p>
+                <h2 class="section-title">Case Studies</h2>
+                <p class="section-subtitle">Real-world HR transformations we've delivered</p>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
@@ -177,9 +1502,10 @@
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h4>Tech Startup HR Setup</h4>
-                                <p>Complete HR infrastructure for 50+ employee startup</p>
+                                <p>Complete HR infrastructure for 50+ employee startup including recruitment, policies, and performance systems.</p>
                                 <span class="portfolio-tag">Recruitment</span>
                                 <span class="portfolio-tag">Policy Development</span>
+                                <span class="portfolio-tag">Startup</span>
                             </div>
                         </div>
                     </div>
@@ -189,10 +1515,11 @@
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop" alt="Manufacturing Company">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
-                                <h4>Manufacturing Company Culture</h4>
-                                <p>Transformed workplace culture for 200+ employees</p>
+                                <h4>Manufacturing Culture Change</h4>
+                                <p>Transformed workplace culture for 200+ employees, reducing turnover by 35% in first year.</p>
                                 <span class="portfolio-tag">Culture Change</span>
                                 <span class="portfolio-tag">Employee Engagement</span>
+                                <span class="portfolio-tag">Manufacturing</span>
                             </div>
                         </div>
                     </div>
@@ -203,13 +1530,195 @@
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h4>Healthcare HR Compliance</h4>
-                                <p>Compliance audit and policy updates for healthcare org</p>
+                                <p>Comprehensive compliance audit and policy updates for regional healthcare provider.</p>
                                 <span class="portfolio-tag">Compliance</span>
                                 <span class="portfolio-tag">Policy Updates</span>
+                                <span class="portfolio-tag">Healthcare</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">Request More Case Studies</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Client Success Stories</h2>
+                <p class="section-subtitle">What our clients say about working with AAMCS</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"AAMCS completely transformed our hiring process. Within 6 months, we reduced our time-to-hire by 40% and improved our retention rate by 35%. Their expertise in talent acquisition is unmatched."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Sarah Johnson</h4>
+                        <span>HR Director, TechStart India</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The team at AAMCS helped us navigate complex labor laws during our expansion. Their compliance audit saved us from potential legal issues and helped us establish best practices."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Rajesh Kumar</h4>
+                        <span>CEO, Innovate Manufacturing</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"We engaged AAMCS for leadership development and the results have been phenomenal. Our management team is more cohesive and effective than ever before."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Priya Patel</h4>
+                        <span>Operations Manager, Growth Healthcare</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose AAMCS</h2>
+                <p class="section-subtitle">What sets us apart in HR consulting</p>
+            </div>
+            <div class="why-choose-grid">
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Industry Expertise</h3>
+                    <p>Deep knowledge across multiple sectors including tech, healthcare, manufacturing, and more.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Client-Centric Approach</h3>
+                    <p>We tailor our solutions to your unique business needs and culture.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Measurable Results</h3>
+                    <p>We focus on delivering tangible improvements to your HR metrics.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Cost-Effective</h3>
+                    <p>Get senior-level HR expertise without the full-time executive cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our HR Services</h2>
+                <p class="section-subtitle">Comprehensive HR solutions tailored to your organizational needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Talent Acquisition</h3>
+                    <p>Attract and hire the best talent with our comprehensive recruitment solutions.</p>
+                    <ul>
+                        <li>Job description development</li>
+                        <li>Candidate sourcing & screening</li>
+                        <li>Interview process design</li>
+                        <li>Employer branding</li>
+                        <li>Onboarding programs</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training & Development</h3>
+                    <p>Invest in your team's growth with customized training programs.</p>
+                    <ul>
+                        <li>Leadership development</li>
+                        <li>Technical skills training</li>
+                        <li>Soft skills workshops</li>
+                        <li>Succession planning</li>
+                        <li>Coaching & mentoring</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>HR Compliance</h3>
+                    <p>Stay compliant with labor laws and regulations to protect your business.</p>
+                    <ul>
+                        <li>Policy development</li>
+                        <li>Legal compliance audits</li>
+                        <li>Employee handbook creation</li>
+                        <li>Dispute resolution</li>
+                        <li>Risk management</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Performance Management</h3>
+                    <p>Implement systems to drive productivity and employee engagement.</p>
+                    <ul>
+                        <li>Performance appraisal systems</li>
+                        <li>Goal setting frameworks</li>
+                        <li>Feedback mechanisms</li>
+                        <li>Recognition programs</li>
+                        <li>Performance improvement plans</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Employee Engagement</h3>
+                    <p>Create a positive work environment that retains top talent.</p>
+                    <ul>
+                        <li>Employee surveys & analytics</li>
+                        <li>Retention strategies</li>
+                        <li>Recognition programs</li>
+                        <li>Team building activities</li>
+                        <li>Work-life balance initiatives</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>HR Technology</h3>
+                    <p>Leverage technology to streamline your HR processes.</p>
+                    <ul>
+                        <li>HRIS selection & implementation</li>
+                        <li>Process automation</li>
+                        <li>Data analytics & reporting</li>
+                        <li>Digital transformation</li>
+                        <li>Employee self-service portals</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">Get a Custom HR Solution</button>
             </div>
         </div>
     </section>
@@ -218,8 +1727,8 @@
     <section id="blog" class="blog">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Latest Insights</h2>
-                <p class="section-subtitle">HR trends and best practices</p>
+                <h2 class="section-title">HR Insights & Updates</h2>
+                <p class="section-subtitle">Latest trends and best practices in human resources</p>
             </div>
             <div class="blog-grid">
                 <article class="blog-card">
@@ -231,8 +1740,8 @@
                             <span class="blog-date">March 15, 2024</span>
                             <span class="blog-category">Remote Work</span>
                         </div>
-                        <h3>Building Effective Remote Teams</h3>
-                        <p>Discover the key strategies for managing and motivating remote teams in the post-pandemic workplace.</p>
+                        <h3>Building Effective Remote Teams in 2024</h3>
+                        <p>Discover the latest strategies for managing and motivating remote teams in the evolving workplace landscape.</p>
                         <a href="#" class="blog-link">Read More →</a>
                     </div>
                 </article>
@@ -245,8 +1754,8 @@
                             <span class="blog-date">March 10, 2024</span>
                             <span class="blog-category">Retention</span>
                         </div>
-                        <h3>Employee Retention Strategies</h3>
-                        <p>Learn proven techniques to keep your top talent engaged and committed to your organization.</p>
+                        <h3>Top Employee Retention Strategies for Indian Companies</h3>
+                        <p>Learn proven techniques to keep your top talent engaged and committed to your organization in the competitive Indian market.</p>
                         <a href="#" class="blog-link">Read More →</a>
                     </div>
                 </article>
@@ -259,11 +1768,14 @@
                             <span class="blog-date">March 5, 2024</span>
                             <span class="blog-category">Technology</span>
                         </div>
-                        <h3>HR Technology Trends 2024</h3>
-                        <p>Explore the latest HR technologies that are transforming how we manage human resources.</p>
+                        <h3>HR Technology Trends Shaping 2024</h3>
+                        <p>Explore the latest HR technologies that are transforming how we manage human resources in the digital age.</p>
                         <a href="#" class="blog-link">Read More →</a>
                     </div>
                 </article>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary">View All Articles</button>
             </div>
         </div>
     </section>
@@ -274,7 +1786,7 @@
             <div class="newsletter-content">
                 <div class="newsletter-text">
                     <h2>Stay Updated with HR Insights</h2>
-                    <p>Get the latest HR trends, tips, and best practices delivered to your inbox monthly.</p>
+                    <p>Subscribe to our monthly newsletter for the latest HR trends, tips, and best practices.</p>
                 </div>
                 <div class="newsletter-form">
                     <form id="newsletterForm">
@@ -288,109 +1800,30 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What Clients Say</h2>
-                <p class="section-subtitle">Real feedback from satisfied clients</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Alex helped us transform our hiring process and improved our retention rate by 40%."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Sarah Johnson</h4>
-                        <span>HR Director, TechStart</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Professional, knowledgeable, and always available when we need guidance."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Mike Chen</h4>
-                        <span>CEO, InnovateCorp</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The best HR consultant we've worked with. Results speak for themselves."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Lisa Rodriguez</h4>
-                        <span>Operations Manager, GrowthCo</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Me Section -->
-    <section id="why-choose" class="why-choose">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose Me</h2>
-                <p class="section-subtitle">What makes me different</p>
-            </div>
-            <div class="why-choose-grid">
-                <div class="why-item">
-                    <div class="why-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Quick Response</h3>
-                    <p>Get answers within 24 hours, guaranteed.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Proven Results</h3>
-                    <p>Track record of improving HR metrics across industries.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Personal Approach</h3>
-                    <p>One-on-one attention, not cookie-cutter solutions.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Expert Knowledge</h3>
-                    <p>Certified professional with 15+ years experience.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Common questions about my services</p>
+                <p class="section-subtitle">Answers to common questions about our HR consulting services</p>
             </div>
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>How long does it take to see results?</h3>
+                        <h3>How quickly can AAMCS help with our HR challenges?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Most clients see improvements within 30-60 days, depending on the scope of work.</p>
+                        <p>We typically begin seeing improvements within 30-60 days, depending on the scope of work. For urgent matters, we offer rapid response services with initial recommendations within 48 hours.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Do you work with small businesses?</h3>
+                        <h3>Do you work with small businesses and startups?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! I work with companies of all sizes, from startups to large corporations.</p>
+                        <p>Absolutely! We specialize in helping small businesses and startups establish strong HR foundations. Our scalable solutions are designed to grow with your business.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -399,107 +1832,35 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>I have experience across tech, healthcare, finance, retail, and manufacturing sectors.</p>
+                        <p>We have extensive experience across IT/tech, healthcare, manufacturing, retail, and professional services. Our team stays current with industry-specific HR challenges and regulations.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>How do we get started?</h3>
+                        <h3>How do we get started with AAMCS?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Simply fill out the contact form or call me for a free 30-minute consultation.</p>
+                        <p>It's simple! Contact us for a free 30-minute consultation. We'll discuss your needs and propose a customized approach to address your HR challenges.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive HR solutions tailored to your needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's the cost of your HR consulting services?</h3>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <h3>Recruitment & Staffing</h3>
-                    <p>Find the perfect candidates for your organization with our comprehensive recruitment services.</p>
-                    <ul>
-                        <li>Job posting and advertising</li>
-                        <li>Candidate screening and interviews</li>
-                        <li>Background checks and references</li>
-                        <li>Onboarding support</li>
-                    </ul>
+                    <div class="faq-answer">
+                        <p>Our pricing is tailored to each client's specific needs. We offer flexible engagement models including project-based, retainer, and hourly options to fit your budget.</p>
+                    </div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can you help with compliance for Indian labor laws?</h3>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <h3>Training & Development</h3>
-                    <p>Invest in your team's growth with customized training programs and development initiatives.</p>
-                    <ul>
-                        <li>Leadership development</li>
-                        <li>Skills training workshops</li>
-                        <li>Performance management</li>
-                        <li>Career planning</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-balance-scale"></i>
+                    <div class="faq-answer">
+                        <p>Yes, our team has deep expertise in Indian labor laws including the Shops and Establishments Act, Industrial Disputes Act, PF, ESI, and other statutory requirements. We help ensure full compliance.</p>
                     </div>
-                    <h3>HR Compliance</h3>
-                    <p>Stay compliant with labor laws and regulations to protect your business and employees.</p>
-                    <ul>
-                        <li>Policy development</li>
-                        <li>Legal compliance audits</li>
-                        <li>Employee handbook creation</li>
-                        <li>Risk management</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Performance Management</h3>
-                    <p>Implement effective performance evaluation systems to drive productivity and engagement.</p>
-                    <ul>
-                        <li>Performance appraisal systems</li>
-                        <li>Goal setting and tracking</li>
-                        <li>Feedback mechanisms</li>
-                        <li>Recognition programs</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Employee Wellness</h3>
-                    <p>Promote a healthy work environment with comprehensive wellness and benefits programs.</p>
-                    <ul>
-                        <li>Health and wellness programs</li>
-                        <li>Benefits administration</li>
-                        <li>Work-life balance initiatives</li>
-                        <li>Mental health support</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>HR Technology</h3>
-                    <p>Leverage modern HR technology to streamline processes and improve efficiency.</p>
-                    <ul>
-                        <li>HRIS implementation</li>
-                        <li>Automation solutions</li>
-                        <li>Data analytics</li>
-                        <li>Digital transformation</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -509,8 +1870,8 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to transform your HR practices? Let's talk!</p>
+                <h2 class="section-title">Contact AAMCS</h2>
+                <p class="section-subtitle">Ready to transform your HR practices? Let's connect!</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -519,9 +1880,13 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Address</h4>
-                            <p>Tiwari Nagar, Miyapur, Telangana, India
-Madinaguda, Near Miyapur PS</p>
+                            <h4>Our Office</h4>
+                            <p>Tiwari Nagar, Miyapur, Madinaguda, Near Miyapur PS, Hyderabad, Telangana, India 500049</p>
+                            <div class="contact-actions">
+                                <a href="https://maps.google.com/?q=Tiwari+Nagar,+Miyapur,+Hyderabad" target="_blank" class="contact-action-btn">
+                                    <i class="fas fa-map-marker-alt"></i> View on Map
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -530,9 +1895,9 @@ Madinaguda, Near Miyapur PS</p>
                         </div>
                         <div class="contact-details">
                             <h4>Phone</h4>
-                            <p> +91-9177457715</p>
+                            <p>+91-9177457715</p>
                             <div class="contact-actions">
-                                <a href="tel:+15551234567" class="contact-action-btn">
+                                <a href="tel:+919177457715" class="contact-action-btn">
                                     <i class="fas fa-phone"></i> Call Now
                                 </a>
                             </div>
@@ -544,9 +1909,9 @@ Madinaguda, Near Miyapur PS</p>
                         </div>
                         <div class="contact-details">
                             <h4>WhatsApp</h4>
-                            <p>+1 (555) 123-4567</p>
+                            <p>+91-9177457715</p>
                             <div class="contact-actions">
-                                <a href="https://wa.me/15551234567" target="_blank" class="contact-action-btn whatsapp-btn">
+                                <a href="https://wa.me/919177457715" target="_blank" class="contact-action-btn whatsapp-btn">
                                     <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                                 </a>
                             </div>
@@ -559,6 +1924,22 @@ Madinaguda, Near Miyapur PS</p>
                         <div class="contact-details">
                             <h4>Email</h4>
                             <p>karthiksarmak@gmail.com</p>
+                            <div class="contact-actions">
+                                <a href="mailto:karthiksarmak@gmail.com" class="contact-action-btn">
+                                    <i class="fas fa-envelope"></i> Send Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed</p>
                         </div>
                     </div>
                 </div>
@@ -574,22 +1955,55 @@ Madinaguda, Near Miyapur PS</p>
                             <input type="text" id="company" name="company" placeholder="Company Name">
                         </div>
                         <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
                             <select id="service" name="service" required>
                                 <option value="">Select a Service</option>
-                                <option value="recruitment">Recruitment & Staffing</option>
+                                <option value="recruitment">Talent Acquisition</option>
                                 <option value="training">Training & Development</option>
                                 <option value="compliance">HR Compliance</option>
                                 <option value="performance">Performance Management</option>
-                                <option value="wellness">Employee Wellness</option>
+                                <option value="engagement">Employee Engagement</option>
                                 <option value="technology">HR Technology</option>
-                                <option value="other">Other</option>
+                                <option value="other">Other HR Needs</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tell us about your HR needs..." rows="5" required></textarea>
+                            <textarea id="message" name="message" placeholder="Tell us about your HR needs and challenges..." rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us Section -->
+    <section class="visit-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Visit Our Office</h2>
+                <p class="section-subtitle">Better yet, see us in person! We love meeting our clients face-to-face.</p>
+            </div>
+            <div class="visit-content">
+                <div class="visit-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.287036274148!2d78.3538143153557!3d17.4478705050048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b3d22f3e0d%3A0x8a1e5c9b0e0b0b0b!2sTiwari%20Nagar%2C%20Miyapur%2C%20Hyderabad%2C%20Telangana%20500049!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="visit-details">
+                    <h3>AAMCS HR Consulting</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Tiwari Nagar, Miyapur, Madinaguda, Near Miyapur PS, Hyderabad, Telangana, India 500049</p>
+                    <p><i class="fas fa-phone"></i> +91-9177457715</p>
+                    <p><i class="fas fa-envelope"></i> karthiksarmak@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Monday-Friday: 9AM-6PM | Saturday: 10AM-4PM</p>
+                    <div class="visit-cta">
+                        <a href="tel:+919177457715" class="btn btn-primary">
+                            <i class="fas fa-phone"></i> Call Us Now
+                        </a>
+                        <a href="https://wa.me/919177457715" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -602,9 +2016,9 @@ Madinaguda, Near Miyapur PS</p>
                 <div class="footer-section">
                     <div class="footer-logo">
                         <i class="fas fa-users"></i>
-                        <span>HR Consultant Pro</span>
+                        <span>AAMCS HR Consultant</span>
                     </div>
-                    <p>Transforming businesses through strategic human resources management.</p>
+                    <p>Transforming businesses through strategic human resources management in Hyderabad and across India.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -616,29 +2030,32 @@ Madinaguda, Near Miyapur PS</p>
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Case Studies</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#services">Recruitment</a></li>
-                        <li><a href="#services">Training</a></li>
-                        <li><a href="#services">Compliance</a></li>
-                        <li><a href="#services">Technology</a></li>
+                        <li><a href="#services">Talent Acquisition</a></li>
+                        <li><a href="#services">Training & Development</a></li>
+                        <li><a href="#services">HR Compliance</a></li>
+                        <li><a href="#services">Performance Management</a></li>
+                        <li><a href="#services">HR Technology</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@hrconsultantpro.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> New York, NY 10001</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tiwari Nagar, Miyapur, Hyderabad</p>
+                    <p><i class="fas fa-phone"></i> +91-9177457715</p>
+                    <p><i class="fas fa-envelope"></i> karthiksarmak@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 HR Consultant Pro. All rights reserved.</p>
+                <p>&copy; 2024 AAMCS HR Consultant. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -646,6 +2063,133 @@ Madinaguda, Near Miyapur PS</p>
     <!-- Alert Container -->
     <div id="alertContainer" class="alert-container"></div>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+                
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const newsletterForm = document.getElementById('newsletterForm');
+        const alertContainer = document.getElementById('alertContainer');
+        
+        function showAlert(message, type) {
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                ${message}
+            `;
+            
+            alertContainer.appendChild(alert);
+            
+            // Remove alert after animation completes
+            setTimeout(() => {
+                alert.remove();
+            }, 3500);
+        }
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    contactForm.reset();
+                    showAlert('Thank you for your message! We will contact you soon.', 'success');
+                }, 1000);
+            });
+        }
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    newsletterForm.reset();
+                    showAlert('Thank you for subscribing to our newsletter!', 'success');
+                }, 1000);
+            });
+        }
+        
+        // Sticky Navigation on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'white';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .portfolio-item, .blog-card, .testimonial-card, .why-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .portfolio-item, .blog-card, .testimonial-card, .why-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
 </body>
-</html> 
+</html>
